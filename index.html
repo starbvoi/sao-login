@@ -106,33 +106,5 @@
     </div>
     <button class="login-button">LINK START</button>
   </div>
-      
-<script>
-  const loginBtn = document.querySelector('.login-button');
-  loginBtn.addEventListener('click', function () {
-    const userId = document.getElementById('userId').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    fetch("https://script.google.com/macros/s/AKfycbz_sanWiYTfICWnLFijegS4jU0dQYFfAGytVMr3p4yfbnnssIwAPW_Q90JTLe2kADR_/exec", {
-      method: "POST",
-      body: JSON.stringify({ userId, password }),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    .then(res => res.text())
-    .then(result => {
-      if (result === "success") {
-        alert("Login berhasil!");
-        // Optional: redirect atau buka halaman lain
-      } else {
-        alert("Anda belum punya akun.");
-      }
-    })
-    .catch(err => {
-      alert("Terjadi kesalahan koneksi.");
-    });
-  });
-</script>
 </body>
 </html>
